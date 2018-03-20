@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :category, inclusion: { in: %w(Fiction Non-Fiction) }
 end
 
-class PostValidator < ActiveRecord::Validator
+class PostValidator < ActiveModel::Validator
   def validate(record)
     record.title.include?("Won't Believe") || record.title.include?("Secret") || record.title.include?("Top [number]") || record.title.include?("Guess")
   end
