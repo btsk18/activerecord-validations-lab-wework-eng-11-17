@@ -1,6 +1,6 @@
 class PostValidator < ActiveModel::Validator
   def validate(record)
-    !!record.title.to_sempty?
+    !!record.title.to_s.empty?
     record.title.include?("Won't Believe") || record.title.include?("Secret") || record.title.include?("Top [number]") || record.title.include?("Guess")
   end
 end
